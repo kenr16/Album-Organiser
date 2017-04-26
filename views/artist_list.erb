@@ -1,0 +1,10 @@
+<h1>You have reached the artists list page.</h1>
+
+<ul>
+
+  <% @albums.each do |album| %>
+    <li><a href="/albums/<%= album.id()%>"><%= album.artist()%></a></li>
+  <% end %>
+
+
+</ul>

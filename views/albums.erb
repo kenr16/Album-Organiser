@@ -1,0 +1,8 @@
+<h1>Albums</h1>
+
+<h3>Here are the albums in your collection: </h3>
+<ul>
+  <% @albums.each() do |album| %>
+    <li><a href="/albums/<%= album.id() %>"><%= album.title() %></a></li>
+  <% end %>
+</ul>

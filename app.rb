@@ -30,3 +30,8 @@ get('/albums/:id') do
   @album = Cd.find(params.fetch('id').to_i())
   erb(:album)
 end
+
+get('/artist_list') do
+  @albums = Cd.all()
+  erb(:artist_list)
+end
