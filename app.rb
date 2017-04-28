@@ -1,10 +1,10 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-also_reload('views/**/*.erb')
 require('./lib/cd')
 
 get('/') do
+  @albums = Cd.all()
   erb(:index)
 end
 
@@ -28,6 +28,7 @@ end
 
 get('/albums/:id') do
   @album = Cd.find(params.fetch('id').to_i())
+  @albums = Cd.all()
   erb(:album)
 end
 
